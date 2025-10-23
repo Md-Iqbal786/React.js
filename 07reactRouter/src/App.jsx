@@ -1,10 +1,12 @@
 import React from 'react'
-import Home from './components/home';
-import About from './components/about'
-import DashBoard from './components/dashBoard'
-import NavBar from './components/NavBar';
+
 import './App.css'
 import { createBrowserRouter , RouterProvider } from 'react-router'
+import LogInPage from './components/LogInPage';
+import FollowerPage from './components/FollowerPage';
+import RepoPage from './components/RepoPage';
+import HomePage from './components/HomePage';
+import Footer from './components/Footer';
 
 
 const router = createBrowserRouter(
@@ -13,26 +15,33 @@ const router = createBrowserRouter(
       path: "/",
       element:
       <div>
-        <Home/>
-        <NavBar/>
+        <HomePage/>
+        
       </div>
     },
     {
-      path: "/about",
+      path: "/repo-page",
       element: 
       <div>
-        <About/>
-        <NavBar/>
+        <RepoPage/> 
       </div>
     },
     {
-      path: "/dashBoard",
+      path: "/follower-page",
       element: 
       <div>
-        <DashBoard/>
-        <NavBar/>
+        <FollowerPage/>
       </div>
     },
+    {
+      path: "/login-page",
+      element: 
+      <div>
+        <LogInPage/>
+      </div>
+    }
+
+
   ]
 )
 
@@ -43,6 +52,7 @@ function App() {
     <div>
       
       <RouterProvider router={router}/>
+      <HomePage/>
       
     </div>
   )
